@@ -1,0 +1,1 @@
+void traitementArgcArgv(int a,int b);
