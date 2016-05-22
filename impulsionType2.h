@@ -1,0 +1,1 @@
+void tensionImpulsion (int num_gpio);

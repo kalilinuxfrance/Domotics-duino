@@ -42,12 +42,12 @@ int main(int argc, char *argv[])
 		}
 
 // -----------------------------------------------------------------------
-// Transformation en int des arguments
+// Transformation en int des arguments de type char
 	if (strcmp(argv[1], "0") == 0){valeur1 = 0;}
 	if (strcmp(argv[1], "1") == 0){valeur1 = 1;}
 	if (strcmp(argv[1], "2") == 0){valeur1 = 2;}
 // -----------------------------------------------------------------------
-// Transformation en int des arguments
+// Transformation en int des arguments de type char
 	if (strcmp(argv[2], "0") == 0){valeur2 = 0;}
 	if (strcmp(argv[2], "1") == 0){valeur2 = 1;}
 	if (strcmp(argv[2], "2") == 0){valeur2 = 2;}
@@ -64,10 +64,10 @@ int main(int argc, char *argv[])
 	if (strcmp(argv[2], "13") == 0){valeur2 = 13;}
 // -----------------------------------------------------------------------
 // gestion des erreurs
-	if (valeur1 == 99){return(0);}
-	if (valeur2 == 99){return(0);}
+	if (valeur1 == 99){printf("\n\nErreur arguments, entrez domoticsduino pour obtenir de l'aide\n\n"); return(0);}
+	if (valeur2 == 99){printf("\n\nErreur arguments, entrez domoticsduino pour obtenir de l'aide\n\n"); return(0);}
 // si pas d'erreur en parametre on commence a traiter les arguments
 	traitementArgcArgv (valeur1, valeur2);
-	return (0);
+	return (0); // return (0) de fin d'execution normale du main()
 }
 

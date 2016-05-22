@@ -20,6 +20,6 @@ void tensionPositive (int num_gpio)
 	
     else
 		{
-        printf("\nerreur\n");
+        printf("\nerreur lors de l'ecriture du gpio\n");
 		}
 }

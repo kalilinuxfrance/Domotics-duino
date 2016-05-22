@@ -7,8 +7,6 @@
 
 void traitementArgcArgv(int a,int b)
 {
-	printf("\nessai recup donnees %d\n",a);
-	printf("essai recup donnees %d\n",b);
 	// envoi du parametre b correspondant aux numero du gpio a faire travailler
 	if (a == 0)// mode tension nulle
 		{
@@ -22,7 +20,7 @@ void traitementArgcArgv(int a,int b)
 
 	if (a == 2)// mode tension positive type impulsion pour telerupteur
 		{
-	//	tensionImpulsion(b);
+		tensionImpulsion(b);
 		}
 	
 }
