@@ -1,0 +1,1 @@
+void tensionNulle (int num_gpio);

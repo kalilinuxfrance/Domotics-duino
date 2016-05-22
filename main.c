@@ -25,16 +25,21 @@
 #include "traitementArgcArgv.h"
 int main(int argc, char *argv[])
 {
-	int valeur1 = 99;
-	int valeur2 = 99;
+	int valeur1 = 99; // valeur pour gerer les erreurs
+	int valeur2 = 99; // valeur pour gerer les erreurs
+	
 // test pour afficher l'aide
-	if (argc == 1){MenuAide();return (0);}
-// test pour verifier le bon nombre d'arguments
-	if (argc != 3){
-	printf("\n\nErreur arguments, entrez domoticsduino pour obtenir de l'aide\n\n");
-	return (0);
-	}
-
+	if (argc == 1) // si pas d'arguments rentrés
+		{
+			MenuAide();
+			return (0);
+		}
+// test pour verifier le bon nombre d'arguments juste 2
+	if (argc != 3)
+		{
+			printf("\n\nErreur arguments, entrez domoticsduino pour obtenir de l'aide\n\n");
+			return (0);
+		}
 
 // -----------------------------------------------------------------------
 // Transformation en int des arguments
@@ -61,6 +66,7 @@ int main(int argc, char *argv[])
 // gestion des erreurs
 	if (valeur1 == 99){return(0);}
 	if (valeur2 == 99){return(0);}
+// si pas d'erreur en parametre on commence a traiter les arguments
 	traitementArgcArgv (valeur1, valeur2);
 	return (0);
 }
