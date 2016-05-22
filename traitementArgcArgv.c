@@ -4,9 +4,19 @@
 
 void traitementArgcArgv(int a,int b)
 {
-
-	
-	printf("essai recup donnees %d\n",a);
+	printf("\nessai recup donnees %d\n",a);
 	printf("essai recup donnees %d\n",b);
+	if (a = 0)
+	{
+		
+	}
+
+	if (a = 1)
+	{
+	}
+
+	if (a = 2)
+	{
+	}
 	
 }
