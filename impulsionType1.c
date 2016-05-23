@@ -8,7 +8,7 @@ void tensionPositive (int num_gpio)
     FILE *gpio = NULL;
    
     char fichier[128] = "";
-    snprintf(fichier, sizeof fichier, "Tpositif%d.txt", num_gpio);
+    snprintf(fichier, sizeof fichier, "/sys/devices/virtual/misc/gpio/pin/gpio%d", num_gpio);
 	
 	gpio = fopen(fichier, "w");
 	

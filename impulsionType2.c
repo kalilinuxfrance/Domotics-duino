@@ -10,13 +10,13 @@ void tensionImpulsion (int num_gpio)
     FILE *gpio = NULL;
    
     char fichier[128] = "";
-    snprintf(fichier, sizeof fichier, "tensionNulle%d.txt", num_gpio);
+    snprintf(fichier, sizeof fichier, "/sys/devices/virtual/misc/gpio/pin/gpio%d", num_gpio);
 	
 	gpio = fopen(fichier, "w");
 	
     if (gpio != NULL)
 		{
-		fputc('0', gpio);
+		fputc('1', gpio);
         fclose(gpio), gpio = NULL;
 		}
 	
@@ -25,8 +25,17 @@ void tensionImpulsion (int num_gpio)
         printf("\nerreur lors de l'ecriture du gpio en allumage\n");
 		}
 	// ----------------------------------------------------------------------------
-
-	// inserer une pause ici----
+	
+	system("sleep 1"); // Pause en appel system
+	
+	/* inserer une pause ici en C -------------------------------------
+	int compteur = 0;
+	int compteur2 = 0;
+	for (compteur = 0; compteur <= 10 ; compteur++ )
+		printf(".");
+		for (compteur2 = 0; compteur2 <= 99999999 ; compteur2++ )
+		; // instruction vide norme
+	*/
 
 	// ------------------partie desactivation du gpio------------------------------------------------
 
@@ -35,7 +44,7 @@ void tensionImpulsion (int num_gpio)
     FILE *gpioB = NULL;
    
     char fichierB[128] = "";
-    snprintf(fichierB, sizeof fichierB, "tensionNulle%d.txt", num_gpio);
+    snprintf(fichierB, sizeof fichierB, "/sys/devices/virtual/misc/gpio/pin/gpio%d", num_gpio);
 	
 	gpioB = fopen(fichierB, "w");
 	
@@ -49,6 +58,7 @@ void tensionImpulsion (int num_gpio)
 		{
         printf("\nerreur lors de l'ecriture du gpio en extinction\n");
 		}
+	
 	// ----------------------------------------------------------------------------
 
 
