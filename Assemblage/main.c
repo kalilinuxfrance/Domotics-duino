@@ -17,11 +17,9 @@
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 
 void MenuAide();
 void tensionNulle (int num_gpio);
@@ -30,6 +28,9 @@ void tensionImpulsion (int num_gpio);
 void traitementArgcArgv(int a,int b);
 
 
+
+
+// ------------------------------------------------------------------------------------------------
 int main(int argc, char *argv[])
 {
 	int valeur1 = 99; // valeur pour gerer les erreurs
@@ -77,8 +78,9 @@ int main(int argc, char *argv[])
 	traitementArgcArgv (valeur1, valeur2);
 	return (0); // return (0) de fin d'execution normale du main()
 }
+// ------------------------------------------------------------------------------------------------
 
-
+// ------------------------------------------------------------------------------------------------
 void MenuAide()
 {
 printf("\nDomotics-duino v0.1 by Julien Amrein(https://github.com/kalilinuxfrance/Domotics-duino)\n");
@@ -88,7 +90,10 @@ printf("Usage:\tdomoticsduino [Impulsion Type] [Adresse GPIO]\n");
 printf("\nIMPULSION TYPE\n");
 printf("\t0 : Pas de tension aux bornes du gpio (Exemple: Allumage pompe d'arrosage)\n");
 printf("\t1 : Tension aux bornes du gpio        (Exemple: Extinction pompe d'arrosage)\n");
-printf("\t2 : Tension aux bornes du gpio pendant 1 seconde (Exemple: telerupteurs pour eclairage)\n");
+printf("\t2 : Tension aux bornes du gpio pendant 1 seconde (Exemple: telerupteurs)\n");
+printf("\n\tATTENTION: Toute utilisation sur le courant electrique est DANGEREUSE!\n");
+printf("\t\tl utilisation de ce logiciel est a vos risques et perils.\n\n");
+
 printf("ADRESSE GPIO\n");
 printf("\t0\t-N/A\n");
 printf("\t1\t-Salon\n");
@@ -107,8 +112,9 @@ printf("\t13\t-N/A\n");
 printf("EXAMPLES:\n");
 printf("\tdomoticsduino 2 3 : Cree une impulsion pour enclencher le telerupteur de la cuisine\n");
 }
+// ------------------------------------------------------------------------------------------------
 
-
+// ------------------------------------------------------------------------------------------------
 void traitementArgcArgv(int a,int b)
 {
 	// envoi du parametre b correspondant aux numero du gpio a faire travailler
@@ -128,13 +134,9 @@ void traitementArgcArgv(int a,int b)
 		}
 	
 }
+// ------------------------------------------------------------------------------------------------
 
-
-
-
-
-
-
+// ------------------------------------------------------------------------------------------------
 void tensionNulle (int num_gpio)
 {
 	// Creation du nom de fichier et ouverture de celui-ci
@@ -157,11 +159,9 @@ void tensionNulle (int num_gpio)
         printf("\nerreur lors de l'ecriture du gpio\n");
 		}
 }
+// ------------------------------------------------------------------------------------------------
 
-
-
-
-
+// ------------------------------------------------------------------------------------------------
 void tensionPositive (int num_gpio)
 {
 	// Creation du nom de fichier et ouverture de celui-ci
@@ -184,14 +184,12 @@ void tensionPositive (int num_gpio)
         printf("\nerreur lors de l'ecriture du gpio\n");
 		}
 }
+// ------------------------------------------------------------------------------------------------
 
-
-
-
-
+// ------------------------------------------------------------------------------------------------
 void tensionImpulsion (int num_gpio)
 {
-	// -------------------------partie activation du gpio------------------------------------------------
+	// -------------------------partie activation du gpio--------------------------------------
 
 	// Creation du nom de fichier et ouverture de celui-ci
 	
@@ -212,11 +210,11 @@ void tensionImpulsion (int num_gpio)
 		{
         printf("\nerreur lors de l'ecriture du gpio en allumage\n");
 		}
-	// ----------------------------------------------------------------------------
+	// --------------------------------------------------------------------------------------
 	
 	system("sleep 1"); // Pause en appel system
 	
-	/* inserer une pause ici en C -------------------------------------
+	/* ----------------------inserer une pause ici en C -------------------------------------
 	int compteur = 0;
 	int compteur2 = 0;
 	for (compteur = 0; compteur <= 10 ; compteur++ )
@@ -225,7 +223,7 @@ void tensionImpulsion (int num_gpio)
 		; // instruction vide norme
 	*/
 
-	// ------------------partie desactivation du gpio------------------------------------------------
+	// ------------------partie desactivation du gpio-----------------------------------------
 
 	// Creation du nom de fichier et ouverture de celui-ci
 	
@@ -246,9 +244,6 @@ void tensionImpulsion (int num_gpio)
 		{
         printf("\nerreur lors de l'ecriture du gpio en extinction\n");
 		}
-	
-	// ----------------------------------------------------------------------------
-
-
 
 }
+// ------------------------------------------------------------------------------------------------
