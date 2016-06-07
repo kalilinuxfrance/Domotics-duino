@@ -22,6 +22,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "aide.h"
+#include "configuration.h"
 #include "traitementArgcArgv.h"
 int main(int argc, char *argv[])
 {
@@ -34,6 +35,10 @@ int main(int argc, char *argv[])
 			MenuAide();
 			return (0);
 		}
+	
+// gestion des exceptions config et autres...
+	if (strcmp(argv[1], "--config") == 0){config(); return(0);}
+	
 // test pour verifier le bon nombre d'arguments juste 2
 	if (argc != 3)
 		{
@@ -46,6 +51,7 @@ int main(int argc, char *argv[])
 	if (strcmp(argv[1], "0") == 0){valeur1 = 0;}
 	if (strcmp(argv[1], "1") == 0){valeur1 = 1;}
 	if (strcmp(argv[1], "2") == 0){valeur1 = 2;}
+	if (strcmp(argv[1], "3") == 0){valeur1 = 98;}
 // -----------------------------------------------------------------------
 // Transformation en int des arguments de type char
 	if (strcmp(argv[2], "0") == 0){valeur2 = 0;}

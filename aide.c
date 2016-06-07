@@ -7,6 +7,7 @@ printf("\nDomotics-duino v0.1 by Julien Amrein(https://github.com/kalilinuxfranc
 printf("GNU General Public License.\n");
 printf("ATTENTION: Penser a configurer le mode output des gpio a controler avec la valeur 1 dans:\n/sys/devices/virtual/misc/gpio/mode/.\n\n");
 printf("Usage:\tdomoticsduino [Impulsion Type] [Adresse GPIO]\n");
+printf("      \tdomoticsduino --config\n");
 printf("\nIMPULSION TYPE\n");
 printf("\t0 : Pas de tension aux bornes du gpio (Exemple: Allumage pompe d'arrosage)\n");
 printf("\t1 : Tension aux bornes du gpio        (Exemple: Extinction pompe d'arrosage)\n");
@@ -28,4 +29,5 @@ printf("\t12\t-N/A\n");
 printf("\t13\t-N/A\n");
 printf("EXAMPLES:\n");
 printf("\tdomoticsduino 2 3 : Cree une impulsion pour enclencher le telerupteur de la cuisine\n");
+printf("\tdomoticsduino --config : Permet de configurer le mode de travail des gpio\n");
 }
