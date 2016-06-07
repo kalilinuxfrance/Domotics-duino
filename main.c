@@ -23,6 +23,7 @@
 #include <string.h>
 #include "aide.h"
 #include "configuration.h"
+#include "status.h"
 #include "traitementArgcArgv.h"
 int main(int argc, char *argv[])
 {
@@ -38,6 +39,7 @@ int main(int argc, char *argv[])
 	
 // gestion des exceptions config et autres...
 	if (strcmp(argv[1], "--config") == 0){config(); return(0);}
+	if (strcmp(argv[1], "--status") == 0){status(); return(0);}
 	
 // test pour verifier le bon nombre d'arguments juste 2
 	if (argc != 3)

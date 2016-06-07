@@ -2,5 +2,5 @@
 
 void config()
 {
-	printf("\n\nCONFIGURATION\n\n");
+	printf("\n\nCONFIGURATION:\n\n");
 }

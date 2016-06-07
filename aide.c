@@ -30,4 +30,6 @@ printf("\t13\t-N/A\n");
 printf("EXAMPLES:\n");
 printf("\tdomoticsduino 2 3 : Cree une impulsion pour enclencher le telerupteur de la cuisine\n");
 printf("\tdomoticsduino --config : Permet de configurer le mode de travail des gpio\n");
+printf("\tdomoticsduino --status : Permet de connaitre le mode de travail des gpio\n");
+
 }
